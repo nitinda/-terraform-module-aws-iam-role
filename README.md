@@ -25,10 +25,6 @@ From branch : **_terraform-11/master_**
 
 * **_IAM Role (Terraform 11 supported code)_**
 
-From branch : **_terraform-12/master_** *work in progress*
-
-* **_IAM Role (Terraform 11 supported code - work in progres)_**
-
 
 ---
 
@@ -47,7 +43,7 @@ To use this module, add the following call to your code:
 
 ```tf
 module "<layer>-iam-role-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-iam-role.git?ref=master"
+  source = "git::https://github.com/nitinda/terraform-module-aws-iam-role.git?ref=terraform-11/master"
 
 
 }
@@ -59,21 +55,24 @@ module "<layer>-iam-role-<AccountID>" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-|         **_Variable_**          |        **_Description_**            |   **_Type_**   |
-|---------------------------------|-------------------------------------|----------------|
+|         **_Variable_**          |         **_Description_**             |    **_Type_**    |
+|---------------------------------|---------------------------------------|------------------|
+| name                            | The name of the role                  | string           |
+| assume_role_policy              | The policy that grants an entity      | string           |
+| description                     | The description of the role           | string           |
+| path                            | The path to the role                  | string           |
+| force_detach_policies           | Specifies to force detaching          | string           |
+| common_tags                     | Resource Tags                         | map              |
 
-
-
-Details are in respective branch.
 
 
 ## Outputs
 
-* **_id_**
+* **_id_** 
+* **_name_** 
 * **_arn_**
 
 
-Details are in respective branch.
 
 
 ### Usage
