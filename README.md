@@ -45,7 +45,19 @@ To use this module, add the following call to your code:
 module "<layer>-iam-role-<AccountID>" {
   source = "git::https://github.com/nitinda/terraform-module-aws-iam-role.git?ref=terraform-11/master"
 
+  providers = {
+    "aws"  = "aws.services"
+  }
 
+  ## Tags
+  common_tags = "${var.common_tags}"
+  
+  ## IAM Role
+  name                  = "iam-role-test"
+  assume_role_policy    = "${var.assume_role_policy}"
+  description           = "IAM Role assumed by Service"
+  path                  = "${var.path}"
+  force_detach_policies = "${var.force_detach_policies}"
 }
 ```
 ---
