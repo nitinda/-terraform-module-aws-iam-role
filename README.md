@@ -1,4 +1,4 @@
-# Terraform Module Name: terraform-module-iam-role
+# Terraform Module Name: terraform-module-aws-iam-role
 
 
 ## General
