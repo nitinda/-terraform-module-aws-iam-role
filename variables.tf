@@ -20,5 +20,5 @@ variable "force_detach_policies" {
 
 variable "common_tags" {
   description = "Resource Tags"
-  type        = "map"
+  type        = map
 }
