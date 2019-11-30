@@ -21,13 +21,9 @@ This module deploys aws services details are in respective feature branches.
 
 Below we are able to check the resources that are being created as part of this module call:
 
-From branch : **_terraform-11/master_**
+From branch : **_terraform-12/master_**
 
-* **_IAM Role (Terraform 11 supported code)_**
-
-From branch : **_terraform-12/master_** *work in progress*
-
-* **_IAM Role (Terraform 11 supported code - work in progres)_**
+* **_IAM Role (Terraform 12 supported code)_**
 
 
 ---
@@ -47,9 +43,21 @@ To use this module, add the following call to your code:
 
 ```tf
 module "<layer>-iam-role-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-iam-role.git?ref=master"
+  source = "git::https://github.com/nitinda/terraform-module-aws-iam-role.git?ref=terraform-12/master"
 
+  providers = {
+    "aws"  = "aws.services"
+  }
 
+  ## Tags
+  common_tags = "var.common_tags"
+  
+  ## IAM Role
+  name                  = "iam-role-test"
+  assume_role_policy    = "var.assume_role_policy"
+  description           = "IAM Role assumed by Service"
+  path                  = "var.path"
+  force_detach_policies = "var.force_detach_policies"
 }
 ```
 ---
@@ -59,12 +67,15 @@ module "<layer>-iam-role-<AccountID>" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-|         **_Variable_**          |        **_Description_**            |   **_Type_**   |
-|---------------------------------|-------------------------------------|----------------|
+|         **_Variable_**          |         **_Description_**             |    **_Type_**    |
+|---------------------------------|---------------------------------------|------------------|
+| name                            | The name of the role                  | string           |
+| assume_role_policy              | The policy that grants an entity      | string           |
+| description                     | The description of the role           | string           |
+| path                            | The path to the role                  | string           |
+| force_detach_policies           | Specifies to force detaching          | string           |
+| common_tags                     | Resource Tags                         | map              |
 
-
-
-Details are in respective branch.
 
 
 ## Outputs
