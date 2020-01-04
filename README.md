@@ -71,7 +71,7 @@ The variables required in order for the module to be successfully called from th
 | **_name_** | The name of the role | _string_ | **_Required_** |
 | **_assume\_role\_policy_** | The policy that grants an entity | _string_ | **_Required_** |
 | **_description_** | The description of the role | _string_ | **_Required_** |
-| **_path_** | The path to the role | _string_ | **_Required_** |
+| **_path_** | The path to the role | _string_ | **_Optional_** |
 | **_force\_detach\_policies_** | Specifies to force detaching | _string_ | **_Required_** |
 | **_tags_** | Resource Tags | _map(string)_ | **_Required_** |
 

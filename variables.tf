@@ -12,6 +12,7 @@ variable "description" {
 
 variable "path" {
   description = "The path to the role."
+  default     = "/"
 }
 
 variable "force_detach_policies" {
