@@ -10,7 +10,7 @@ This module may be used to create **_IAM Role_** resources in AWS cloud provider
 
 ## Prerequisites
 
-This module needs **_Terraform 0.11.14_** or newer.
+This module needs **_Terraform 0.12.18_** or newer.
 You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
 
 This module deploys aws services details are in respective feature branches.
