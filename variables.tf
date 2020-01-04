@@ -18,7 +18,7 @@ variable "force_detach_policies" {
   description = "Specifies to force detaching any policies the role has before destroying it."
 }
 
-variable "common_tags" {
+variable "tags" {
   description = "Resource Tags"
   type        = "map"
 }
