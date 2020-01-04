@@ -3,14 +3,14 @@
 
 ## General
 
-This module may be used to create IAM Role resources in AWS cloud provider..
+This module may be used to create **_IAM Role_** resources in AWS cloud provider..
 
 ---
 
 
 ## Prerequisites
 
-This module needs Terraform 0.11.14 or newer.
+This module needs **_Terraform 0.11.14_** or newer.
 You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
 
 This module deploys aws services details are in respective feature branches.
@@ -21,9 +21,8 @@ This module deploys aws services details are in respective feature branches.
 
 Below we are able to check the resources that are being created as part of this module call:
 
-From branch : **_terraform-12/master_**
 
-* **_IAM Role (Terraform 12 supported code)_**
+* **_IAM Role_**
 
 
 ---
@@ -50,7 +49,7 @@ module "<layer>-iam-role-<AccountID>" {
   }
 
   ## Tags
-  common_tags = "var.common_tags"
+  tags = "var.tags"
   
   ## IAM Role
   name                  = "iam-role-test"
@@ -67,14 +66,14 @@ module "<layer>-iam-role-<AccountID>" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-|         **_Variable_**          |         **_Description_**             |    **_Type_**    |
-|---------------------------------|---------------------------------------|------------------|
-| name                            | The name of the role                  | string           |
-| assume_role_policy              | The policy that grants an entity      | string           |
-| description                     | The description of the role           | string           |
-| path                            | The path to the role                  | string           |
-| force_detach_policies           | Specifies to force detaching          | string           |
-| common_tags                     | Resource Tags                         | map              |
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
+|:----|:----|-----:|-----:|
+| **_name_** | The name of the role | _string_ | **_Required_** |
+| **_assume\_role\_policy_** | The policy that grants an entity | _string_ | **_Required_** |
+| **_description_** | The description of the role | _string_ | **_Required_** |
+| **_path_** | The path to the role | _string_ | **_Required_** |
+| **_force\_detach\_policies_** | Specifies to force detaching | _string_ | **_Required_** |
+| **_tags_** | Resource Tags | _map(string)_ | **_Required_** |
 
 
 
