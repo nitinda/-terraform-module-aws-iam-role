@@ -3,14 +3,14 @@
 
 ## General
 
-This module may be used to create IAM Role resources in AWS cloud provider..
+This module may be used to create **_IAM Role_** resources in AWS cloud provider..
 
 ---
 
 
 ## Prerequisites
 
-This module needs Terraform 0.11.14 or newer.
+This module needs **_Terraform 0.11.14_** or newer.
 You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
 
 This module deploys aws services details are in respective feature branches.
@@ -25,9 +25,9 @@ From branch : **_terraform-11/master_**
 
 * **_IAM Role (Terraform 11 supported code)_**
 
-From branch : **_terraform-12/master_** *work in progress*
+From branch : **_terraform-12/master_**
 
-* **_IAM Role (Terraform 11 supported code - work in progres)_**
+* **_IAM Role (Terraform 12 supported code)_**
 
 
 ---
@@ -59,8 +59,8 @@ module "<layer>-iam-role-<AccountID>" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-|         **_Variable_**          |        **_Description_**            |   **_Type_**   |
-|---------------------------------|-------------------------------------|----------------|
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
+|:----|:----|-----:|-----:|
 
 
 
