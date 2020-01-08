@@ -45,7 +45,7 @@ module "<layer>-iam-role-<AccountID>" {
   source = "git::https://github.com/nitinda/terraform-module-aws-iam-role.git?ref=terraform-12/master"
 
   providers = {
-    "aws"  = "aws.services"
+    aws  = aws.services
   }
 
   ## Tags

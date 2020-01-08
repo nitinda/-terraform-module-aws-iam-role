@@ -2,7 +2,7 @@ resource "aws_iam_role" "iam_role" {
   name                   = var.name
   assume_role_policy     = var.assume_role_policy
   description            = var.description
-  path                   = var.path
-  tags                   = var.common_tags
+  path                   = var.path == "" ? "/" : var.path
+  tags                   = var.tags
   force_detach_policies  = var.force_detach_policies
 }
