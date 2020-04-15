@@ -8,7 +8,7 @@ resource "aws_iam_role" "iam_role" {
   permissions_boundary   = var.permissions_boundary
   tags                   = var.tags
 
-  lifecycle = {
+  lifecycle {
     create_before_destroy = true
   }
 }
