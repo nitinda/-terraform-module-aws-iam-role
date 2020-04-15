@@ -81,6 +81,27 @@ module "iam_role" {
   force_detach_policies = "var.force_detach_policies"
 }
 ```
+
+```tf
+module "iam_role" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-iam-role.git?ref=master"
+
+  providers = {
+    aws  = aws.services
+  }
+
+  ## Tags
+  tags = var.tags
+  
+  ## IAM Role
+  name                  = "iam-role-test"
+  assume_role_policy    = "var.assume_role_policy"
+  description           = "IAM Role assumed by Service"
+  path                  = "var.path"
+  force_detach_policies = "var.force_detach_policies"
+}
+```
+
 ---
 
 ## _Inputs_
