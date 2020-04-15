@@ -1,25 +1,36 @@
-# Terraform Module Name: terraform-module-aws-iam-role
+# _Terraform Module: terraform-module-aws-iam-role_
+_Terraform module Provides an_ **_IAM Role_** _resource in_ **_AWS_** _cloud provider._
+
+<!--BEGIN STABILITY BANNER-->
+---
+
+![_Code : Stable_](https://img.shields.io/badge/Code-Stable-brightgreen?style=for-the-badge&logo=github)
+
+>
+
+---
+<!--END STABILITY BANNER-->
 
 
-## General
+## _General_
 
-This module may be used to create **_IAM Role_** resources in AWS cloud provider..
+_This module may be used to create_ **_IAM Role_** _resources in AWS cloud provider....._
 
 ---
 
 
-## Prerequisites
+## _Prerequisites_
 
-This module needs **_Terraform 0.12.18_** or newer.
-You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
+_This module needs_ **_Terraform 0.12.18_** _or newer._
+_You can download the latest Terraform version from_ [_here_](https://www.terraform.io/downloads.html).
 
-This module deploys aws services details are in respective feature branches.
+_This module deploys aws services details are in respective feature branches._
 
 ---
 
-## Features Branches
+## _Features_
 
-Below we are able to check the resources that are being created as part of this module call:
+_Below we are able to check the resources that are being created as part of this module call:_
 
 
 * **_IAM Role_**
@@ -27,22 +38,39 @@ Below we are able to check the resources that are being created as part of this 
 
 ---
 
-## Below are the resources that are launched by this module
+## _Below are the resources that are launched by this module_
 
 * **_IAM Role_**
 
 
 ---
 
-## Usage
+## _Usage_
 
-## Using this repo
+## _Using this repo_
 
-To use this module, add the following call to your code:
+_To use this module, add the following call to your code:_
 
 ```tf
-module "<layer>-iam-role-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-iam-role.git?ref=terraform-12/master"
+module "iam_role" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-iam-role.git?ref=master"
+
+  providers = {
+    aws  = aws.services
+  }
+
+  ## Tags
+  tags = "var.tags"
+  
+  ## IAM Role
+  name                  = "iam-role-test"
+  assume_role_policy    = "var.assume_role_policy"
+}
+```
+
+```tf
+module "iam_role" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-iam-role.git?ref=master"
 
   providers = {
     aws  = aws.services
@@ -61,19 +89,22 @@ module "<layer>-iam-role-<AccountID>" {
 ```
 ---
 
-## Inputs
+## _Inputs_
 
-The variables required in order for the module to be successfully called from the deployment repository are the following:
+_The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
 
-|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
-|:----|:----|-----:|-----:|
-| **_name_** | The name of the role | _string_ | **_Required_** |
-| **_assume\_role\_policy_** | The policy that grants an entity | _string_ | **_Required_** |
-| **_description_** | The description of the role | _string_ | **_Required_** |
-| **_path_** | The path to the role | _string_ | **_Optional_** |
-| **_force\_detach\_policies_** | Specifies to force detaching | _string_ | **_Required_** |
-| **_tags_** | Resource Tags | _map(string)_ | **_Required_** |
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** | **_Default Value_** |
+|:----|:----|-----:|:---:|:---:|
+| **_name_** | _The name of the role_ | _string_ | **_Optional_** | **_null_** |
+| **_name\_prefix_** | _Creates a unique name beginning <br/> with the specified prefix_ | _string_ | **_Optional_** | **_null_** |
+| **_assume\_role\_policy_** | _The policy that grants an entity <br/>permission to assume the role_ | _string_ | **_Required_** |  |
+| **_force\_detach\_policies_** | Specifies to force detaching | _boolean_ | **_Required_** |
+| **_path_** | _The path to the role_ | _string_ | **_Optional_** | **_null_** |
+| **_description_** | _The description of the role_ | _string_ | **_Optional_** | **_null_** |
+| **_max\_session\_duration_** | _The maximum session duration (in seconds) <br/>that you want to set for the specified role_ | _number_ | **_Optional_** | **_null_** |
+| **_permissions\_boundary_** | _The ARN of the policy that is used to set the <br/>permissions boundary for the role_ | _string_ | **_Optional_** | **_null_** |
+| **_tags_** | Resource Tags | _map(string)_ | **_Optional_** | **_{}_** |
 
 
 
