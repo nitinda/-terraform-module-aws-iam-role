@@ -93,7 +93,7 @@ _The variables required in order for the module to be successfully called from t
 | **_name_** | _The name of the role_ | _string_ | **_Optional_** | **_null_** |
 | **_name\_prefix_** | _Creates a unique name beginning <br/> with the specified prefix_ | _string_ | **_Optional_** | **_null_** |
 | **_assume\_role\_policy_** | _The policy that grants an entity <br/>permission to assume the role_ | _string_ | **_Required_** |  |
-| **_force\_detach\_policies_** | Specifies to force detaching | _boolean_ | **_Required_** |
+| **_force\_detach\_policies_** | Specifies to force detaching | _boolean_ | **_Optional_** | **_false_** |
 | **_path_** | _The path to the role_ | _string_ | **_Optional_** | **_null_** |
 | **_description_** | _The description of the role_ | _string_ | **_Optional_** | **_null_** |
 | **_max\_session\_duration_** | _The maximum session duration (in seconds) <br/>that you want to set for the specified role_ | _number_ | **_Optional_** | **_null_** |
