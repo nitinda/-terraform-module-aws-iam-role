@@ -98,7 +98,7 @@ _The variables required in order for the module to be successfully called from t
 | **_description_** | _The description of the role_ | _string_ | **_Optional_** | **_null_** |
 | **_max\_session\_duration_** | _The maximum session duration (in seconds) <br/>that you want to set for the specified role_ | _number_ | **_Optional_** | **_null_** |
 | **_permissions\_boundary_** | _The ARN of the policy that is used to set the <br/>permissions boundary for the role_ | _string_ | **_Optional_** | **_null_** |
-| **_tags_** | Resource Tags | _map(string)_ | **_Optional_** | **_{}_** |
+| **_tags_** | _Key-value mapping of tags for the IAM role_ | _map(string)_ | **_Optional_** | **_{}_** |
 
 
 
