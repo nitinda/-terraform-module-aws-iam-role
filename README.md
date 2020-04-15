@@ -91,7 +91,13 @@ module "iam_role" {
   }
 
   ## Tags
-  tags = var.tags
+  tags = merge(
+    var.common_tags,
+    {
+      Environment = "prod"
+      Name        = "iam-role"
+    }
+  )
   
   ## IAM Role
   name                  = "iam-role-test"
