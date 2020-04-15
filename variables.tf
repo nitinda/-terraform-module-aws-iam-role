@@ -34,6 +34,11 @@ variable "max_session_duration" {
   type        = number
 }
 
+variable "permissions_boundary" {
+  description = "The ARN of the policy that is used to set the permissions boundary for the role"
+  default     = null
+}
+
 
 variable "tags" {
   description = "Key-value mapping of tags for the IAM role"
