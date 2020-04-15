@@ -38,12 +38,6 @@ _Below we are able to check the resources that are being created as part of this
 
 ---
 
-## _Below are the resources that are launched by this module_
-
-* **_IAM Role_**
-
-
----
 
 ## _Usage_
 
