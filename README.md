@@ -101,6 +101,7 @@ _The variables required in order for the module to be successfully called from t
 | **_tags_** | _Key-value mapping of tags for the IAM role_ | _map(string)_ | **_Optional_** | **_{}_** |
 
 
+---
 
 ## _Outputs_
 
