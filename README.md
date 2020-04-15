@@ -10,7 +10,7 @@ This module may be used to create **_IAM Role_** resources in AWS cloud provider
 
 ## Prerequisites
 
-This module needs **_Terraform 0.11.14_** or newer.
+This module needs **_Terraform 0.12.18_** or newer.
 You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
 
 This module deploys aws services details are in respective feature branches.
@@ -21,13 +21,8 @@ This module deploys aws services details are in respective feature branches.
 
 Below we are able to check the resources that are being created as part of this module call:
 
-From branch : **_terraform-11/master_**
 
-* **_IAM Role (Terraform 11 supported code)_**
-
-From branch : **_terraform-12/master_**
-
-* **_IAM Role (Terraform 12 supported code)_**
+* **_IAM Role_**
 
 
 ---
@@ -47,9 +42,21 @@ To use this module, add the following call to your code:
 
 ```tf
 module "<layer>-iam-role-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-iam-role.git?ref=master"
+  source = "git::https://github.com/nitinda/terraform-module-aws-iam-role.git?ref=terraform-12/master"
 
+  providers = {
+    aws  = aws.services
+  }
 
+  ## Tags
+  tags = "var.tags"
+  
+  ## IAM Role
+  name                  = "iam-role-test"
+  assume_role_policy    = "var.assume_role_policy"
+  description           = "IAM Role assumed by Service"
+  path                  = "var.path"
+  force_detach_policies = "var.force_detach_policies"
 }
 ```
 ---
@@ -61,10 +68,13 @@ The variables required in order for the module to be successfully called from th
 
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
 |:----|:----|-----:|-----:|
+| **_name_** | The name of the role | _string_ | **_Required_** |
+| **_assume\_role\_policy_** | The policy that grants an entity | _string_ | **_Required_** |
+| **_description_** | The description of the role | _string_ | **_Required_** |
+| **_path_** | The path to the role | _string_ | **_Optional_** |
+| **_force\_detach\_policies_** | Specifies to force detaching | _string_ | **_Required_** |
+| **_tags_** | Resource Tags | _map(string)_ | **_Required_** |
 
-
-
-Details are in respective branch.
 
 
 ## Outputs
