@@ -71,7 +71,7 @@ module "iam_role" {
   }
 
   ## Tags
-  tags = "var.tags"
+  tags = var.tags
   
   ## IAM Role
   name                  = "iam-role-test"
